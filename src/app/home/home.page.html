@@ -8,7 +8,28 @@
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <!--The world is your oyster.
+    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>-->
+
+    <ion-input [(ngModel)]="valorInput" placeholder="Digite o texto..."></ion-input>
+
+    <ion-button color="danger" [disabled]="!valorInput" expand="full" (click)="getJokes()">Exibir piada show!</ion-button>
+  
+    <div>
+      <ul>
+          <li *ngFor="let item of piadasFilter">
+              {{ item.pergunta }}
+          </li>
+      </ul>    
+    </div>
+
+    <!-- <div *ngIf="piada">
+
+      <img [src]="url" />
+      <h1>{{ piada.pergunta }}</h1>
+      <h3><span style="color: blue">Resposta: </span>{{ piada.resposta }}</h3>
+
+    </div> -->
+    
   </div>
 </ion-content>
