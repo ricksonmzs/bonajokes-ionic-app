@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class JokesService {
 
+  piada: any;
+
   url = '/assets/jokes.json';
 
   constructor(private http: HttpClient) { }
@@ -13,4 +15,5 @@ export class JokesService {
   getAllJokes(){
     return this.http.get<any[]>(this.url);
   }
+  
 }

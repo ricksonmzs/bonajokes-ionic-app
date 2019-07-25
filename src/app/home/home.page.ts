@@ -57,4 +57,8 @@ export class HomePage {
       }
     })
   }
+
+  prepareToDetail(piada){
+    this.jokesService.piada = piada;
+  }
 }

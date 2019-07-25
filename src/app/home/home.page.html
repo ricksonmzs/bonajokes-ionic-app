@@ -11,25 +11,33 @@
     <!--The world is your oyster.
     <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>-->
 
+    <!-- Input Valor -->
     <ion-input [(ngModel)]="valorInput" placeholder="Digite o texto..."></ion-input>
 
+    <!-- Button Disabled -->
     <ion-button color="danger" [disabled]="!valorInput" expand="full" (click)="getJokes()">Exibir piada show!</ion-button>
   
+    <!-- List Piadas -->
     <div>
+        <!-- <img [src]="url"/> -->
       <ul>
-          <li *ngFor="let item of piadasFilter">
-              {{ item.pergunta }}
-          </li>
+        <div *ngFor="let item of piadasFilter">
+            <li>
+              <a (click)="prepareToDetail(item)" [routerLink]="['/detalhar']" routerLinkActive="router-link-active">
+                <b>Pergunta: </b> {{ item.pergunta }}
+              </a>                
+            </li>
+        </div>          
       </ul>    
     </div>
 
-    <!-- <div *ngIf="piada">
+    <div *ngIf="piada">
 
       <img [src]="url" />
       <h1>{{ piada.pergunta }}</h1>
       <h3><span style="color: blue">Resposta: </span>{{ piada.resposta }}</h3>
 
-    </div> -->
+    </div>    
     
   </div>
 </ion-content>
